@@ -36,43 +36,43 @@ export default function Navigate() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item" style={{ color: "white" }}>
-                  <a
+                  <Link
                     style={{ color: "white" }}
                     className="nav-link"
-                    href="/account"
+                    to="/account"
                   >
                     Account
-                  </a>
+                  </Link>
                 </li>
                 {users && users.isadmin && (
                   <li className="nav-item">
-                    <a
+                    <Link
                       style={{ color: "white" }}
                       className="nav-link"
-                      href="/users"
+                      to="/users"
                     >
                       Users
-                    </a>
+                    </Link>
                   </li>
                 )}
                 <li className="nav-item">
-                  <a
+                  <Link
                     style={{ color: "white" }}
                     className="nav-link"
-                    href="/profile"
+                    to="/profile"
                   >
                     Profile
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a
+                  <Link
                     style={{ color: "white" }}
                     className="nav-link"
-                    href="/"
+                    to="/"
                     onClick={logout}
                   >
                     Log Out
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
