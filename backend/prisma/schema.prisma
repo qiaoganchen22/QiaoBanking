@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model account {
+  accountid                                                  Int                  @id @default(autoincrement())
+  userid                                                     Int?
+  type                                                       account_type?
+  balance                                                    Float
+  users                                                      users?               @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+  transaction                                                transaction[]
+  transactiondetails_transactiondetails_fromaccountToaccount transactiondetails[] @relation("transactiondetails_fromaccountToaccount")
+  transactiondetails_transactiondetails_toaccountToaccount   transactiondetails[] @relation("transactiondetails_toaccountToaccount")
+}
+
+model transaction {
+  transactionid      Int                  @id @default(autoincrement())
+  userid             Int?
+  type               action?
+  accountid          Int?
+  created_at         DateTime             @default(now()) @db.Timestamp(6)
+  account            account?             @relation(fields: [accountid], references: [accountid], onDelete: NoAction, onUpdate: NoAction)
+  users              users?               @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+  transactiondetails transactiondetails[]
+}
+
+model transactiondetails {
+  transactiondetailsid                            Int          @id @default(autoincrement())
+  toaccount                                       Int?
+  fromaccount                                     Int?
+  amount                                          Float
+  transactionid                                   Int?
+  account_transactiondetails_fromaccountToaccount account?     @relation("transactiondetails_fromaccountToaccount", fields: [fromaccount], references: [accountid], onDelete: NoAction, onUpdate: NoAction)
+  account_transactiondetails_toaccountToaccount   account?     @relation("transactiondetails_toaccountToaccount", fields: [toaccount], references: [accountid], onDelete: NoAction, onUpdate: NoAction)
+  transaction                                     transaction? @relation(fields: [transactionid], references: [transactionid], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model users {
+  userid      Int           @id @default(autoincrement())
+  firstname   String        @db.VarChar(255)
+  lastname    String        @db.VarChar(255)
+  ssn         Int           @unique
+  address     String        @db.VarChar(255)
+  isadmin     Boolean?      @default(false)
+  password    String        @db.VarChar(255)
+  email       String        @unique @db.VarChar(255)
+  account     account[]
+  transaction transaction[]
+}
+
+enum account_type {
+  checking
+  savings
+}
+
+enum action {
+  deposit
+  withdrawal
+  transfer
+}
