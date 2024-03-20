@@ -11,6 +11,7 @@ import { useTransferMutation } from "../api/transactionApi";
 import Navigate from "./Navigate";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import "./usersaccount.css";
 
 export default function Account() {
   const [transaction, setTransaction] = useState(null);
@@ -35,7 +36,7 @@ export default function Account() {
     }
     setTransaction(obj);
   }, [accounts]);
-  console.log(transaction);
+  // console.log(transaction);
   const [form, setForm] = useState({
     type: "checking",
     balance: 0,
@@ -112,10 +113,17 @@ export default function Account() {
       <div>
         <Navigate></Navigate>
 
-        <Button variant="primary" onClick={handleShow}>
-          Create Account
-        </Button>
-
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "20px",
+            marginBottom: "20px",
+          }}
+        >
+          <Button variant="primary" onClick={handleShow}>
+            Create Account
+          </Button>
+        </div>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
@@ -220,86 +228,128 @@ export default function Account() {
 
         {accounts.map((account) => {
           return (
-            <div key={account.accountid}>
-              <h2 onClick={()=>{setTransaction({...transaction, [account.accountid]: !transaction[account.accountid]})}}>AccountId: {account.accountid}</h2>
-              <h2>Account Type: {account.type} </h2>
-              <h2>
-                Account Balance: $
-                {Intl.NumberFormat("en-US", {
-                  maximumFractionDigits: 2,
-                }).format(account.balance)}
-              </h2>
-              {/* <input type="number" onChange={updateAmount} /> */}
+            <div className="accounts" key={account.accountid}>
+              <div className="row">
+                <h2
+                  className="col-sm"
+                  onClick={() => {
+                    setTransaction({
+                      ...transaction,
+                      [account.accountid]: !transaction[account.accountid],
+                    });
+                  }}
+                >
+                  AccountId: {account.accountid}
+                </h2>
+                <h2 className="col-sm">
+                  Type:{" "}
+                  {account.type[0].toUpperCase() + account.type.substring(1)}{" "}
+                </h2>
+                <h2 className="col-sm">
+                  Balance: $
+                  {Intl.NumberFormat("en-US", {
+                    maximumFractionDigits: 2,
+                  }).format(account.balance)}
+                </h2>
+                {/* <input type="number" onChange={updateAmount} /> */}
+              </div>
+              <div className="row">
+                <Button
+                  style={{ marginRight: "20px" }}
+                  className="col-sm "
+                  variant="primary"
+                  id={account.accountid}
+                  onClick={(e) => {
+                    setId(e.target.id);
+                    showDeposit();
+                  }}
+                >
+                  Deposit
+                </Button>
 
-              <Button
-                variant="primary"
-                id={account.accountid}
-                onClick={(e) => {
-                  setId(e.target.id);
-                  showDeposit();
-                }}
-              >
-                Deposit
-              </Button>
-
-              {/* <button onClick={deposit} id={account.accountid}>
+                {/* <button onClick={deposit} id={account.accountid}>
                 Deposit
               </button> */}
 
-              <Button
-                variant="primary"
-                id={account.accountid}
-                onClick={(e) => {
-                  setId(e.target.id);
-                  showWith();
-                }}
-              >
-                Withdrawal
-              </Button>
+                <Button
+                  style={{ marginRight: "20px" }}
+                  className="col-sm "
+                  variant="primary"
+                  id={account.accountid}
+                  onClick={(e) => {
+                    setId(e.target.id);
+                    showWith();
+                  }}
+                >
+                  Withdrawal
+                </Button>
 
-              <Button
-                variant="primary"
-                id={account.accountid}
-                onClick={(e) => {
-                  setId(e.target.id);
-                  showTrans();
-                }}
-              >
-                Transfer
-              </Button>
-
+                <Button
+                  style={{ marginRight: "20px" }}
+                  className="col-sm "
+                  variant="primary"
+                  id={account.accountid}
+                  onClick={(e) => {
+                    setId(e.target.id);
+                    showTrans();
+                  }}
+                >
+                  Transfer
+                </Button>
+              </div>
+              {transaction && transaction[account.accountid] && <hr />}
               {transaction &&
                 transaction[account.accountid] &&
                 (account.transactions?.length ? (
-                  account.transactions.map((transaction) => {
-                    return (
-                      <div
-                        style={{ border: "solid black 1px" }}
-                        key={transaction.transactionid}
-                      >
-                        <h2>Transaction Type: {transaction.type} </h2>
-                        <h2>TransactionID: {transaction.transactionid}</h2>
-                        <h2>
-                          Date: {transaction.created_at.split("T")[0]}{" "}
-                          {transaction.created_at.split("T")[1].split(".")[0]}
-                        </h2>
-                        <h2>
-                          TransactionAmount: $
-                          {Intl.NumberFormat("en-US", {
-                            maximumFractionDigits: 2,
-                          }).format(transaction.transactionDetails.amount)}
-                        </h2>
-                        <h2>
-                          FromAccount:{" "}
-                          {transaction.transactionDetails.fromaccount}
-                        </h2>
-                      </div>
-                    );
-                  })
+                  <div className="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table className="table table-bordered table-striped mb-0">
+                      {account.transactions.map((transaction) => {
+                        return (
+                          <tr
+                            className="tablebox"
+                            key={transaction.transactionid}
+                          >
+                            <div className="row">
+                              <h4 className="col-sm">
+                                Transaction ID: {transaction.transactionid}
+                              </h4>
+                              <h4 className="col-sm">
+                                Transaction Type: {transaction.type}{" "}
+                              </h4>
+
+                              <h4 className="col-sm">
+                                Date: {transaction.created_at.split("T")[0]}{" "}
+                                {
+                                  transaction.created_at
+                                    .split("T")[1]
+                                    .split(".")[0]
+                                }
+                              </h4>
+                            </div>
+                            <div className="row">
+                              <h5 className="col-sm">
+                                Transaction Amount: $
+                                {Intl.NumberFormat("en-US", {
+                                  maximumFractionDigits: 2,
+                                }).format(
+                                  transaction.transactionDetails.amount
+                                )}
+                              </h5>
+                              <h5 className="col-sm">
+                                From Account:{" "}
+                                {transaction.transactionDetails.fromaccount}
+                              </h5>
+                              <div className="col-sm"></div>
+                            </div>
+                            <hr />
+                          </tr>
+                        );
+                      })}{" "}
+                    </table>
+                  </div>
                 ) : (
                   <>No transactions</>
                 ))}
-              <hr />
             </div>
           );
         })}

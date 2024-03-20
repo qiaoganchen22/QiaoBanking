@@ -7,9 +7,10 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useUpdateUserMutation } from "../api/usersApi";
 import { useEffect } from "react";
+import "./usersaccount.css";
 
 export default function Profile() {
-  const { users,token } = useSelector((state) => state.authSlice);
+  const { users, token } = useSelector((state) => state.authSlice);
   const [show, setShow] = useState(false);
   const [updateUsers] = useUpdateUserMutation();
 
@@ -29,7 +30,7 @@ export default function Profile() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const results = await updateUsers({ ...form,token });
+    const results = await updateUsers({ ...form, token });
     console.log(results);
     setShow(false);
   };
@@ -39,7 +40,7 @@ export default function Profile() {
     <div>
       <Navigate></Navigate>
       {
-        <>
+        <div className="prof">
           <h2>Profile</h2>
           <hr />
           <img
@@ -47,16 +48,17 @@ export default function Profile() {
             alt="pic"
             style={{ height: "300px", width: "300px" }}
           />
-          <h3>First Name: {users?.firstname}</h3>
-          <h3>Last Name: {users?.lastname}</h3>
           <h3>User ID: {users?.userid}</h3>
-          <h3>SSN: ***-**-{String(users?.ssn).substring(5)}</h3>
-          <h3>Address: {users?.address}</h3>
-        </>
+          <h4>
+            {users?.firstname} {users?.lastname}
+          </h4>
+          <h5>SSN: ***-**-{String(users?.ssn).substring(5)}</h5>
+          <h5>Address: {users?.address}</h5>
+          <Button variant="primary" onClick={handleShow}>
+            Update
+          </Button>{" "}
+        </div>
       }
-      <Button variant="primary" onClick={handleShow}>
-        Update
-      </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -74,7 +76,6 @@ export default function Profile() {
                 name="firstname"
                 defaultValue={users?.firstname}
                 onChange={onChange}
-
               />
             </div>
             <div className="">
