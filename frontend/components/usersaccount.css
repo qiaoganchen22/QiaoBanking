@@ -41,4 +41,10 @@
   .prof {
     width: 100%;
   }
+  .apple {
+    display: grid;
+  }
+  .apple button {
+    margin-bottom: 5px;
+  }
 }

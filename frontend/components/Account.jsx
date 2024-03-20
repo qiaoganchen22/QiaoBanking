@@ -229,7 +229,15 @@ export default function Account() {
         {accounts.map((account) => {
           return (
             <div className="accounts" key={account.accountid}>
-              <div className="row">
+              <div
+                className="row"
+                onClick={() => {
+                  setTransaction({
+                    ...transaction,
+                    [account.accountid]: !transaction[account.accountid],
+                  });
+                }}
+              >
                 <h2
                   className="col-sm"
                   onClick={() => {
@@ -254,48 +262,50 @@ export default function Account() {
                 {/* <input type="number" onChange={updateAmount} /> */}
               </div>
               <div className="row">
-                <Button
-                  style={{ marginRight: "20px" }}
-                  className="col-sm "
-                  variant="primary"
-                  id={account.accountid}
-                  onClick={(e) => {
-                    setId(e.target.id);
-                    showDeposit();
-                  }}
-                >
-                  Deposit
-                </Button>
+                <div className="apple col-sm-4">
+                  <Button
+                    style={{ marginRight: "20px" }}
+                    className="col-sm "
+                    variant="primary"
+                    id={account.accountid}
+                    onClick={(e) => {
+                      setId(e.target.id);
+                      showDeposit();
+                    }}
+                  >
+                    Deposit
+                  </Button>
 
-                {/* <button onClick={deposit} id={account.accountid}>
+                  {/* <button onClick={deposit} id={account.accountid}>
                 Deposit
               </button> */}
 
-                <Button
-                  style={{ marginRight: "20px" }}
-                  className="col-sm "
-                  variant="primary"
-                  id={account.accountid}
-                  onClick={(e) => {
-                    setId(e.target.id);
-                    showWith();
-                  }}
-                >
-                  Withdrawal
-                </Button>
+                  <Button
+                    style={{ marginRight: "20px" }}
+                    className="col-sm "
+                    variant="primary"
+                    id={account.accountid}
+                    onClick={(e) => {
+                      setId(e.target.id);
+                      showWith();
+                    }}
+                  >
+                    Withdrawal
+                  </Button>
 
-                <Button
-                  style={{ marginRight: "20px" }}
-                  className="col-sm "
-                  variant="primary"
-                  id={account.accountid}
-                  onClick={(e) => {
-                    setId(e.target.id);
-                    showTrans();
-                  }}
-                >
-                  Transfer
-                </Button>
+                  <Button
+                    style={{ marginRight: "20px" }}
+                    className="col-sm"
+                    variant="primary"
+                    id={account.accountid}
+                    onClick={(e) => {
+                      setId(e.target.id);
+                      showTrans();
+                    }}
+                  >
+                    Transfer
+                  </Button>
+                </div>
               </div>
               {transaction && transaction[account.accountid] && <hr />}
               {transaction &&
