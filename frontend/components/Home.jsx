@@ -13,6 +13,9 @@ import home from "../src/assets/img/home.png";
 import investment from "../src/assets/img/investment.png";
 import { Carousel } from "react-bootstrap";
 import imgone from "../src/assets/img/about/1.jpg"
+import imgtwo from"../src/assets/img/about/2.jpg"
+import imgthree from "../src/assets/img/about/3.jpg"
+import imgfour from "../src/assets/img/about/4.jpg"
 // import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
@@ -455,7 +458,7 @@ export default function Home() {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="../src/assets/img/about/2.jpg"
+                  src={imgtwo}
                   alt="..."
                 />
               </div>
@@ -479,7 +482,7 @@ export default function Home() {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="../src/assets/img/about/3.jpg"
+                  src={imgthree}
                   alt="..."
                 />
               </div>
@@ -503,7 +506,7 @@ export default function Home() {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="../src/assets/img/about/4.jpg"
+                  src={imgfour}
                   alt="..."
                 />
               </div>
