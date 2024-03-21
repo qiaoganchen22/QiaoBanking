@@ -45,7 +45,7 @@ export default function Register() {
               placeholder="Enter first name"
               name="firstname"
               onChange={onChange}
-              style={{ width: "75%", margin: "auto" }}
+              style={{ width: "75%", margin:"auto" }}
             />
           </div>
           <div className="form-group">
@@ -57,31 +57,31 @@ export default function Register() {
               placeholder="Enter last name"
               name="lastname"
               onChange={onChange}
-              style={{ width: "75%", margin: "auto" }}
+              style={{ width: "75%", margin:"auto" }}
             />
           </div>
           <div className="form-group">
             <label htmlFor="ssn">SSN</label>
             <input
-              type="number"
+              type="password"
               className="form-control"
               id="ssn"
               placeholder="Enter SSN"
               name="ssn"
               onChange={onChange}
-              style={{ width: "75%", margin: "auto" }}
+              style={{ width: "75%", margin:"auto" }}
             />
           </div>
           <div className="form-group">
             <label htmlFor="address">Address</label>
             <input
-              type="password"
+              type="text"
               className="form-control"
               id="address"
               placeholder="Enter Address"
               name="address"
               onChange={onChange}
-              style={{ width: "75%", margin: "auto" }}
+              style={{ width: "75%", margin:"auto" }}
             />
           </div>
           <div className="form-group">
@@ -94,7 +94,7 @@ export default function Register() {
               placeholder="Enter email"
               name="email"
               onChange={onChange}
-              style={{ width: "75%", margin: "auto" }}
+              style={{ width: "75%", margin:"auto" }}
             />
           </div>
           <div className="form-group">
@@ -106,7 +106,7 @@ export default function Register() {
               placeholder="Password"
               name="password"
               onChange={onChange}
-              style={{ width: "75%", margin: "auto" }}
+              style={{ width: "75%", margin:"auto" }}
             />
           </div>
           <button type="submit" className="btn btn-primary mt-3">
