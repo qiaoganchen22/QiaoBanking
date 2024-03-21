@@ -53,7 +53,7 @@ export default function Home() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#about">
-                  About
+                  Process
                 </a>
               </li>
               <li className="nav-item">
@@ -130,7 +130,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-              <img src={auto} alt="" height="100px" />
+            <i className="fa-solid fa-car fs-1" style={{height:"100px" ,color:"#000000"}}></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Auto
@@ -146,7 +146,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-              <img src={investment} alt="" height="100px" />
+            <i class="fa-solid fa-arrow-trend-up" style={{color: "#000000" ,height:"100px"}}></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Investments
@@ -161,83 +161,85 @@ export default function Home() {
           <div className="text-center">
             <h2 className="section-heading text-uppercase">Services</h2>
             <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              Read up on any of our services below!
             </h3>
           </div>
           <div className="row text-center">
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                <i className="fas fa-wallet fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">E-Commerce</h4>
+              <h4 className="my-3">Business Consulting</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Business consulting offers expert advice to improve
+                organizational performance through tailored solutions and
+                strategic insights across diverse industries.
               </p>
             </div>
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                <i className="fas fa-credit-card fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">Responsive Design</h4>
+              <h4 className="my-3">Credit Card</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Credit cards enable users to make purchases on credit with
+                benefits like rewards, functioning as a line of credit issued by
+                financial institutions.
               </p>
             </div>
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-lock fa-stack-1x fa-inverse"></i>
+                <i className="fas fa-sack-dollar fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">Web Security</h4>
+              <h4 className="my-3">Income Monitoring</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
-              </p>
-            </div>
-
-            <div className="col-md-4">
-              <span className="fa-stack fa-4x">
-                <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 className="my-3">E-Commerce</h4>
-              <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Income monitoring involves tracking and analyzing an
+                individual's or organization's earnings over time to understand
+                financial trends, manage expenses, and make informed financial
+                decisions.
               </p>
             </div>
 
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                <i className="fas fa-money-bill fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">E-Commerce</h4>
+              <h4 className="my-3">Insurance Consulting</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Insurance consulting offers expert guidance on coverage options,
+                risk assessment, and claims management to individuals and
+                businesses, ensuring optimal protection against unforeseen
+                events.
               </p>
             </div>
 
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
-                <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                <i className="fas fa-cart-shopping fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">E-Commerce</h4>
+              <h4 className="my-3">Financial Investment</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Financial investment is the allocation of funds into assets like
+                stocks or real estate with the goal of generating returns over
+                time.
+              </p>
+            </div>
+
+            <div className="col-md-4">
+              <span className="fa-stack fa-4x">
+                <i className="fas fa-circle fa-stack-2x text-primary"></i>
+                <i className="fas fa-bullhorn fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 className="my-3">Financial Management</h4>
+              <p className="text-muted">
+                Financial management entails optimizing an organization's
+                resources through activities like budgeting, forecasting, and
+                investment decision-making.
               </p>
             </div>
           </div>
@@ -267,14 +269,16 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/1.jpg"
+                    src="../src/assets/img/portfolio/1.jpg"
                     alt="..."
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Threads</div>
+                  <div className="portfolio-caption-heading">
+                    Wealth Management
+                  </div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Illustration
+                    Tools
                   </div>
                 </div>
               </div>
@@ -293,14 +297,14 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/2.jpg"
+                    src="../src/assets/img/portfolio/2.jpg"
                     alt="..."
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Explore</div>
+                  <div className="portfolio-caption-heading">Offical</div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Graphic Design
+                    Performance
                   </div>
                 </div>
               </div>
@@ -319,14 +323,14 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/3.jpg"
+                    src="../src/assets/img/portfolio/3.jpg"
                     alt="..."
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Finish</div>
+                  <div className="portfolio-caption-heading">Investment</div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Identity
+                    Accounting
                   </div>
                 </div>
               </div>
@@ -345,7 +349,7 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/4.jpg"
+                    src="../src/assets/img/portfolio/4.jpg"
                     alt="..."
                   />
                 </a>
@@ -371,14 +375,14 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/5.jpg"
+                    src="../src/assets/img/portfolio/5.jpg"
                     alt="..."
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Southwest</div>
+                  <div className="portfolio-caption-heading">Portfolio</div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Website Design
+                    Risk and Attribution
                   </div>
                 </div>
               </div>
@@ -397,14 +401,16 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/6.jpg"
+                    src="../src/assets/img/portfolio/6.jpg"
                     alt="..."
                   />
                 </a>
                 <div className="portfolio-caption">
-                  <div className="portfolio-caption-heading">Window</div>
+                  <div className="portfolio-caption-heading">
+                    Private Market
+                  </div>
                   <div className="portfolio-caption-subheading text-muted">
-                    Photography
+                    Capabilities
                   </div>
                 </div>
               </div>
@@ -416,31 +422,30 @@ export default function Home() {
       <section className="page-section" id="about">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">About</h2>
-            <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
+            <h2 className="section-heading text-uppercase">Process</h2>
+            <h3 className="section-subheading text-muted">How it all began!</h3>
           </div>
           <ul className="timeline">
             <li>
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="assets/img/about/1.jpg"
+                  src="../src/assets/img/about/1.jpg"
                   alt="..."
                 />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
-                  <h4>2009-2011</h4>
-                  <h4 className="subheading">Our Humble Beginnings</h4>
+                  <h4>Feburary 24 2024</h4>
+                  <h4 className="subheading">Rough Sketch</h4>
                 </div>
                 <div className="timeline-body">
                   <p className="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sunt ut voluptatum eius sapiente, totam reiciendis
-                    temporibus qui quibusdam, recusandae sit vero unde, sed,
-                    incidunt et ea quo dolore laudantium consectetur!
+                    I designed and constructed tables, visualized the process,
+                    and established connections between various elements. I
+                    systematically assessed the requirements to ensure
+                    everything is interconnected effectively, enhancing the
+                    overall understanding and organization.
                   </p>
                 </div>
               </div>
@@ -449,21 +454,22 @@ export default function Home() {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="assets/img/about/2.jpg"
+                  src="../src/assets/img/about/2.jpg"
                   alt="..."
                 />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
-                  <h4>March 2011</h4>
-                  <h4 className="subheading">An Agency is Born</h4>
+                  <h4>Feburary 28 2024</h4>
+                  <h4 className="subheading">Started on Backend</h4>
                 </div>
                 <div className="timeline-body">
                   <p className="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sunt ut voluptatum eius sapiente, totam reiciendis
-                    temporibus qui quibusdam, recusandae sit vero unde, sed,
-                    incidunt et ea quo dolore laudantium consectetur!
+                    I initiated backend development using Prisma and Express,
+                    crafting routes and implementing essential functions to
+                    facilitate seamless operation. While testing, I ensured the
+                    functionality of all routes using Postman to guarantee
+                    smooth operation and optimal performance.
                   </p>
                 </div>
               </div>
@@ -472,21 +478,22 @@ export default function Home() {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="assets/img/about/3.jpg"
+                  src="../src/assets/img/about/3.jpg"
                   alt="..."
                 />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
-                  <h4>December 2015</h4>
-                  <h4 className="subheading">Transition to Full Service</h4>
+                  <h4>March 6 2024</h4>
+                  <h4 className="subheading">Transition to Frontend</h4>
                 </div>
                 <div className="timeline-body">
                   <p className="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sunt ut voluptatum eius sapiente, totam reiciendis
-                    temporibus qui quibusdam, recusandae sit vero unde, sed,
-                    incidunt et ea quo dolore laudantium consectetur!
+                    I focused on frontend development using React and Redux,
+                    leveraging session storage to minimize unnecessary API
+                    calls. Additionally, I established a store to enable
+                    seamless API integration and CRUD operations with my
+                    backend.
                   </p>
                 </div>
               </div>
@@ -495,21 +502,21 @@ export default function Home() {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="assets/img/about/4.jpg"
+                  src="../src/assets/img/about/4.jpg"
                   alt="..."
                 />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
-                  <h4>July 2020</h4>
-                  <h4 className="subheading">Phase Two Expansion</h4>
+                  <h4>March 12 2024</h4>
+                  <h4 className="subheading">Final Parts</h4>
                 </div>
                 <div className="timeline-body">
                   <p className="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sunt ut voluptatum eius sapiente, totam reiciendis
-                    temporibus qui quibusdam, recusandae sit vero unde, sed,
-                    incidunt et ea quo dolore laudantium consectetur!
+                    I utilized React and React Bootstrap to design the UI/UX,
+                    ensuring a seamless and visually appealing experience. After
+                    final testing, I deployed the frontend to Netlify and the
+                    backend and database to Render for production-ready use.
                   </p>
                 </div>
               </div>
@@ -519,9 +526,9 @@ export default function Home() {
                 <h4>
                   Be Part
                   <br />
-                  Of Our
+                  Of My
                   <br />
-                  Story!
+                  Journey!
                 </h4>
               </div>
             </li>
@@ -532,8 +539,8 @@ export default function Home() {
       <section className="page-section bg-light" id="team">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">Our Team</h2>
-            <h3 className="section-subheading text-muted"></h3>
+            <h2 className="section-heading text-uppercase">The Team</h2>
+            {/* <h3 className="section-subheading text-muted"></h3> */}
           </div>
           <div className="row">
             <div className="col-lg-4">
@@ -579,7 +586,7 @@ export default function Home() {
                 <p className="text-muted">Lead Software Engineer</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href={"https://github.com/qiaoganchen22"}
                   aria-label=""
                 >
                   <i className="fab fa-github"></i>
@@ -626,11 +633,11 @@ export default function Home() {
               </div> */}
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div className="col-lg-8 mx-auto text-center">
               <p className="large text-muted"></p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -684,7 +691,7 @@ export default function Home() {
       <section className="page-section" id="contact">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">Contact Us</h2>
+            <h2 className="section-heading text-uppercase">Contact Me</h2>
             <h3 className="section-subheading text-muted"></h3>
           </div>
 
@@ -811,6 +818,14 @@ export default function Home() {
               >
                 <i className="fab fa-facebook-f"></i>
               </a> */}
+              <a
+                className="btn btn-dark btn-social mx-2"
+                href={"https://github.com/qiaoganchen22"}
+                aria-label=""
+              >
+                <i className="fab fa-github"></i>
+              </a>
+
               <a
                 className="btn btn-dark btn-social mx-2"
                 href={"https://" + "www.linkedin.com/in/qiao-gan-chen"}
