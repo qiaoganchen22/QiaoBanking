@@ -12,6 +12,7 @@ import auto from "../src/assets/img/auto.webp";
 import home from "../src/assets/img/home.png";
 import investment from "../src/assets/img/investment.png";
 import { Carousel } from "react-bootstrap";
+import imgone from "../src/assets/img/about/1.jpg"
 // import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
@@ -430,7 +431,7 @@ export default function Home() {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="../src/assets/img/about/1.jpg"
+                  src={imgone}
                   alt="..."
                 />
               </div>
