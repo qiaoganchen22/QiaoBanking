@@ -89,7 +89,7 @@ export default function Home() {
             {(login && (
               <div >
                 <Login></Login>
-                <p className="belowshit lead">
+                <p className="below lead">
                   No Account?{" "}
                   <Link onClick={() => setLogin(false)}>Register</Link>
                 </p>
@@ -97,7 +97,7 @@ export default function Home() {
             )) || (
               <div >
                 <Register></Register>
-                <p className=" belowshit lead">
+                <p className=" below lead">
                   Have an account?{" "}
                   <Link onClick={() => setLogin(true)}>Login</Link>
                 </p>
