@@ -5,17 +5,23 @@ import navbar from "../src/assets/img/banknav.png";
 import Login from "./Login";
 import Register from "./Register";
 import { Link } from "react-router-dom";
-import pic from "../src/assets/img/Profilepic.webp";
-import ap from "../src/assets/img/ap.webp";
-import savings from "../src/assets/img/savings-12.png";
-import auto from "../src/assets/img/auto.webp";
-import home from "../src/assets/img/home.png";
-import investment from "../src/assets/img/investment.png";
+// import pic from "../src/assets/img/Profilepic.webp";
+// import ap from "../src/assets/img/ap.webp";
+// import savings from "../src/assets/img/savings-12.png";
+// import auto from "../src/assets/img/auto.webp";
+// import home from "../src/assets/img/home.png";
+// import investment from "../src/assets/img/investment.png";
 import { Carousel } from "react-bootstrap";
-import imgone from "../src/assets/img/about/1.jpg"
-import imgtwo from"../src/assets/img/about/2.jpg"
-import imgthree from "../src/assets/img/about/3.jpg"
-import imgfour from "../src/assets/img/about/4.jpg"
+import imgone from "../src/assets/img/about/1.jpg";
+import imgtwo from "../src/assets/img/about/2.jpg";
+import imgthree from "../src/assets/img/about/3.jpg";
+import imgfour from "../src/assets/img/about/4.jpg";
+import port1 from "../src/assets/img/portfolio/1.jpg"
+import port2 from "../src/assets/img/portfolio/2.jpg"
+import port3 from "../src/assets/img/portfolio/3.jpg"
+import port4 from "../src/assets/img/portfolio/4.jpg"
+import port5 from "../src/assets/img/portfolio/5.jpg"
+import port6 from "../src/assets/img/portfolio/6.jpg"
 // import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
@@ -118,7 +124,7 @@ export default function Home() {
         >
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-              <img src={ap} alt="" height="100px" />
+            <i class="fa-solid fa-plane" style={{ height: "100px", color: "#2a69df" }}></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Travel
@@ -126,7 +132,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-              <img src={savings} alt="" height="100px" />
+            <i class="fa-solid fa-piggy-bank" style={{ height: "100px", color: "#2a69df" }}></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Savings
@@ -134,7 +140,10 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-            <i className="fa-solid fa-car fs-1" style={{height:"100px" ,color:"#000000"}}></i>
+              <i
+                className="fa-solid fa-car fs-1"
+                style={{ height: "100px", color: "#2a69df" }}
+              ></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Auto
@@ -142,7 +151,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-              <img src={home} alt="" height="100px" />
+            <i class="fa-solid fa-house" style={{ height: "100px", color: "#2a69df" }}></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Home loans
@@ -150,7 +159,10 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-            <i class="fa-solid fa-arrow-trend-up" style={{color: "#000000" ,height:"100px"}}></i>
+              <i
+                class="fa-solid fa-arrow-trend-up"
+                style={{ height: "100px", color: "#2a69df" }}
+              ></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Investments
@@ -273,7 +285,7 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="../src/assets/img/portfolio/1.jpg"
+                    src={port1}
                     alt="..."
                   />
                 </a>
@@ -301,7 +313,7 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="../src/assets/img/portfolio/2.jpg"
+                    src={port2}
                     alt="..."
                   />
                 </a>
@@ -327,7 +339,7 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="../src/assets/img/portfolio/3.jpg"
+                    src={port3}
                     alt="..."
                   />
                 </a>
@@ -353,7 +365,7 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="../src/assets/img/portfolio/4.jpg"
+                    src={port4}
                     alt="..."
                   />
                 </a>
@@ -379,7 +391,7 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="../src/assets/img/portfolio/5.jpg"
+                    src={port5}
                     alt="..."
                   />
                 </a>
@@ -405,7 +417,7 @@ export default function Home() {
                   </div>
                   <img
                     className="img-fluid"
-                    src="../src/assets/img/portfolio/6.jpg"
+                    src={port6}
                     alt="..."
                   />
                 </a>
