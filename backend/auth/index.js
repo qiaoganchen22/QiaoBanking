@@ -14,10 +14,13 @@ router.post("/register", async (req, res, next) => {
       return res.status(401).send("Please enter your name.");
     }
 
-    if (ssn < 9) {
+    if (ssn.toString().length!==9) {
       return res.status(401).send("ssn must be 9 number.");
     }
 
+    if(!address){
+      return res.status(401).send("Need an address")
+    }
     const isValidEmail = (email) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
@@ -73,10 +76,10 @@ router.post("/login", async (req, res, next) => {
       expiresIn: "1h",
     });
     const array = [];
-   
+
     const accounts = await prisma.account.findMany({
-      where: { 
-        userid: user.userid 
+      where: {
+        userid: user.userid,
       },
     });
 
@@ -99,7 +102,7 @@ router.post("/login", async (req, res, next) => {
       }
       array.push({ ...account, transactions: _transations });
     }
-    res.send({ token, user, account:array });
+    res.send({ token, user, account: array });
   } catch (error) {
     next(error);
   }

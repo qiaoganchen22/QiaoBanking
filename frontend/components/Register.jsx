@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useRegisterUserMutation } from "../api/authApi";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
   const [addNewUser] = useRegisterUserMutation();
@@ -21,14 +23,20 @@ export default function Register() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const results = addNewUser({ ...form, ssn: Number(form.ssn) });
-    navigate("/account")
+    const results = await addNewUser({ ...form, ssn: Number(form.ssn) });
+    console.log(results)
+    if(results.error){
+      return toast.error(results.error.data, { position: "top-right" });
+    }
+    if(!results.error){
+      navigate("/account")
+    }
+    
   };
 
   return (
     <>
-      <div className="loginReg"
-      >
+      <div className="loginReg"><ToastContainer></ToastContainer>
         <h2 style={{ color: "black" }}>Register</h2>
         <form onSubmit={onSubmit}>
           <div className="form-group">

@@ -4,6 +4,8 @@ import { useLoginUserMutation } from "../api/authApi";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useGetAccountDetailsQuery } from "../api/accountApi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
   // const [call,setCall]=useState(false)
@@ -27,6 +29,9 @@ export default function Login() {
     e.preventDefault();
     // console.log(form);
     const result = await data(form);
+    if (result.error) {
+      return toast.error(result.error.data, { position: "top-right" });
+    }
     if (!result.error) {
       // setCall(true)
       navigate("/account");
@@ -34,8 +39,8 @@ export default function Login() {
   };
 
   return (
-    <div className="loginReg"
-    >
+    <div className="loginReg">
+      <ToastContainer></ToastContainer>
       <h2 style={{ color: "black" }}>Login</h2>
       <form onSubmit={onSubmit}>
         <div className="form-group">
