@@ -31,7 +31,7 @@ export default function Profile() {
     e.preventDefault();
 
     const results = await updateUsers({ ...form, token });
-    console.log(results);
+    // console.log(results);
     setShow(false);
   };
 

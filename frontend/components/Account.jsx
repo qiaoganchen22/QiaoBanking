@@ -65,7 +65,7 @@ export default function Account() {
     handleClose();
     // console.log(create);
   };
-  console.log(accounts);
+  // console.log(accounts);
   const updateAmount = (e) => {
     setAmount(e.target.value);
   };
@@ -85,7 +85,7 @@ export default function Account() {
       return setError(result.error.data);
     }
     setError(null);
-    console.log(result);
+    // console.log(result);
     closeWith();
   };
   const transfer = (e) => {

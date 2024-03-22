@@ -124,7 +124,7 @@ export default function Home() {
         >
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-            <i class="fa-solid fa-plane" style={{ height: "100px", color: "#2a69df" }}></i>
+            <i className="fa-solid fa-plane" style={{ height: "100px", color: "#2a69df" }}></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Travel
@@ -132,7 +132,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-            <i class="fa-solid fa-piggy-bank" style={{ height: "100px", color: "#2a69df" }}></i>
+            <i className="fa-solid fa-piggy-bank" style={{ height: "100px", color: "#2a69df" }}></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Savings
@@ -151,7 +151,7 @@ export default function Home() {
           </Carousel.Item>
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
-            <i class="fa-solid fa-house" style={{ height: "100px", color: "#2a69df" }}></i>
+            <i className="fa-solid fa-house" style={{ height: "100px", color: "#2a69df" }}></i>
             </Link>
             <p className="lead" style={{ textAlign: "center" }}>
               Home loans
@@ -160,7 +160,7 @@ export default function Home() {
           <Carousel.Item interval={3000} style={{ marginTop: "15px" }}>
             <Link>
               <i
-                class="fa-solid fa-arrow-trend-up"
+                className="fa-solid fa-arrow-trend-up"
                 style={{ height: "100px", color: "#2a69df" }}
               ></i>
             </Link>

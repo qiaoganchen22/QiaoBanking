@@ -25,7 +25,7 @@ export default function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
+    // console.log(form);
     const result = await data(form);
     if (!result.error) {
       // setCall(true)
