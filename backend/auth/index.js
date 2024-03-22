@@ -14,8 +14,8 @@ router.post("/register", async (req, res, next) => {
       return res.status(401).send("Please enter your name.");
     }
 
-    if (ssn < 7) {
-      return res.status(401).send("ssn must be at 9 number.");
+    if (ssn < 9) {
+      return res.status(401).send("ssn must be 9 number.");
     }
 
     const isValidEmail = (email) => {

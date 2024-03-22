@@ -15,6 +15,8 @@ const authSlice = createSlice({
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
+      window.sessionStorage.removeItem("USER");
+      window.sessionStorage.removeItem("Account");
     },
   },
 
@@ -50,7 +52,7 @@ const authSlice = createSlice({
         console.log(payload);
         state.users = payload;
         const data = JSON.parse(window.sessionStorage.getItem("USER"));
-        console.log(data)
+        console.log(data);
         data.user = payload;
         window.sessionStorage.setItem("USER", JSON.stringify(data));
       }

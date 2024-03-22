@@ -82,22 +82,22 @@ export default function Home() {
       </nav>
       <header className="masthead">
         <div className="container" style={{ margin: "auto" }}>
-          <h1 className="display-2" style={{ width: "40%" }}>
+          <h1 className="display-2" >
             Welcome!
           </h1>
           <div className="masthead">
             {(login && (
-              <div style={{ width: "40%" }}>
+              <div >
                 <Login></Login>
-                <p className="lead">
+                <p className="belowshit lead">
                   No Account?{" "}
                   <Link onClick={() => setLogin(false)}>Register</Link>
                 </p>
               </div>
             )) || (
-              <div style={{ width: "40%" }}>
+              <div >
                 <Register></Register>
-                <p className="lead">
+                <p className=" belowshit lead">
                   Have an account?{" "}
                   <Link onClick={() => setLogin(true)}>Login</Link>
                 </p>
@@ -267,7 +267,7 @@ export default function Home() {
           <div className="text-center">
             <h2 className="section-heading text-uppercase">Portfolio</h2>
             <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+
             </h3>
           </div>
           <div className="row">

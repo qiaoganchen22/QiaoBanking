@@ -34,15 +34,7 @@ export default function Login() {
   };
 
   return (
-    <div
-      style={{
-        boxSizing: "border-box",
-        border: "1px solid black",
-        backgroundColor: "white",
-        width: "100%",
-        padding: "12px",
-        borderRadius: "30px",
-      }}
+    <div className="loginReg"
     >
       <h2 style={{ color: "black" }}>Login</h2>
       <form onSubmit={onSubmit}>

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useRegisterUserMutation } from "../api/authApi";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [addNewUser] = useRegisterUserMutation();
+  const navigate=useNavigate()
 
   const [form, setForm] = useState({
     firstname: "",
@@ -20,19 +22,12 @@ export default function Register() {
     e.preventDefault();
 
     const results = addNewUser({ ...form, ssn: Number(form.ssn) });
+    navigate("/account")
   };
 
   return (
     <>
-      <div
-        style={{
-          boxSizing: "border-box",
-          border: "1px solid black",
-          backgroundColor: "white",
-          width: "100%",
-          padding: "12px",
-          borderRadius: "30px",
-        }}
+      <div className="loginReg"
       >
         <h2 style={{ color: "black" }}>Register</h2>
         <form onSubmit={onSubmit}>
