@@ -228,7 +228,12 @@ export default function Account() {
 
         {accounts.map((account) => {
           return (
-            <div className="accounts" key={account.accountid}>
+            <div className="accounts" key={account.accountid}  onClick={() => {
+              setTransaction({
+                ...transaction,
+                [account.accountid]: !transaction[account.accountid],
+              });
+            }}>
               <div
                 className="row"
                 onClick={() => {
