@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToken } from "../slice/authSlice";
+import { removeAccounts } from "../slice/accountSlice";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
 
@@ -13,6 +14,7 @@ export default function Navigate() {
 
   const logout = () => {
     dispatch(setToken(null));
+    dispatch(removeAccounts());
     navigate("/");
   };
   return (
