@@ -16,7 +16,6 @@ const authSlice = createSlice({
     setToken: (state, action) => {
       state.token = action.payload;
       window.sessionStorage.removeItem("USER");
-      window.sessionStorage.removeItem("Account");
     },
   },
 
@@ -24,9 +23,22 @@ const authSlice = createSlice({
     builder.addMatcher(
       authApi.endpoints.registerUser.matchFulfilled,
       (state, { payload }) => {
-        console.log(payload);
+        // console.log(payload);
         state.users = payload.user;
         state.token = payload.token;
+        window.sessionStorage.setItem(
+          "USER",
+          JSON.stringify({
+            user: payload.user,
+            token: payload.token,
+          })
+        );
+        window.sessionStorage.setItem(
+          "Account",
+          JSON.stringify({
+            account: payload.account,
+          })
+        );
       }
     );
     builder.addMatcher(
