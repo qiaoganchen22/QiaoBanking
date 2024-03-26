@@ -14,12 +14,12 @@ router.post("/register", async (req, res, next) => {
       return res.status(401).send("Please enter your name.");
     }
 
-    if (ssn.toString().length!==9) {
+    if (ssn.toString().length !== 9) {
       return res.status(401).send("ssn must be 9 number.");
     }
 
-    if(!address){
-      return res.status(401).send("Need an address")
+    if (!address) {
+      return res.status(401).send("Need an address");
     }
     const isValidEmail = (email) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -48,7 +48,7 @@ router.post("/register", async (req, res, next) => {
       expiresIn: "1h",
     });
 
-    res.send({ user, token });
+    res.send({ user, token, account: [] });
   } catch (error) {
     next(error);
   }
