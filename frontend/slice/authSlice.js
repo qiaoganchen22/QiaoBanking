@@ -33,12 +33,6 @@ const authSlice = createSlice({
             token: payload.token,
           })
         );
-        window.sessionStorage.setItem(
-          "Account",
-          JSON.stringify({
-            account: payload.account,
-          })
-        );
       }
     );
     builder.addMatcher(

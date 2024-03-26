@@ -27,6 +27,19 @@ const accountSlice = createSlice({
     );
 
     builder.addMatcher(
+      authApi.endpoints.registerUser.matchFulfilled,
+      (state, { payload }) => {
+        state.accounts = payload.account;
+        window.sessionStorage.setItem(
+          "Account",
+          JSON.stringify({
+            account: payload.account,
+          })
+        );
+      }
+    );
+
+    builder.addMatcher(
       authApi.endpoints.loginUser.matchFulfilled,
       (state, { payload }) => {
         state.accounts = payload.account;
@@ -42,9 +55,14 @@ const accountSlice = createSlice({
     builder.addMatcher(
       accountApi.endpoints.createAccount.matchFulfilled,
       (state, { payload }) => {
+        console.log(payload);
+        payload.transactions=[];
         const accounts = Object.assign([], state.accounts);
         accounts.push(payload);
         state.accounts = accounts; //returns all account
+        const data = JSON.parse(window.sessionStorage.getItem("Account"));
+        data.account = state.accounts;
+        window.sessionStorage.setItem("Account", JSON.stringify(data));
       }
     );
 
@@ -76,6 +94,9 @@ const accountSlice = createSlice({
         });
         console.log(account);
         state.accounts = account;
+        const data = JSON.parse(window.sessionStorage.getItem("Account"));
+        data.account = state.accounts;
+        window.sessionStorage.setItem("Account", JSON.stringify(data));
       }
     );
     //withdrawal
@@ -98,6 +119,9 @@ const accountSlice = createSlice({
         });
         console.log(account);
         state.accounts = account;
+        const data = JSON.parse(window.sessionStorage.getItem("Account"));
+        data.account = state.accounts;
+        window.sessionStorage.setItem("Account", JSON.stringify(data));
       }
     );
     //transfer
@@ -130,6 +154,9 @@ const accountSlice = createSlice({
         });
         console.log(account);
         state.accounts = account;
+        const data = JSON.parse(window.sessionStorage.getItem("Account"));
+        data.account = state.accounts;
+        window.sessionStorage.setItem("Account", JSON.stringify(data));
       }
     );
   },
