@@ -10,7 +10,12 @@ const accountSlice = createSlice({
       ? JSON.parse(window.sessionStorage.getItem("Account")).account
       : [],
   },
-  reducers: {},
+  reducers: {
+    removeAccounts: (state, action) => {
+      state.accounts = [];
+      window.sessionStorage.removeItem("Account");
+    },
+  },
 
   extraReducers: (builder) => {
     builder.addMatcher(
@@ -130,3 +135,4 @@ const accountSlice = createSlice({
   },
 });
 export default accountSlice.reducer;
+export const { removeAccounts } = accountSlice.actions;
